@@ -1,0 +1,8 @@
+2025-10-16 11:31:11,488, ERROR     , Thiis is error type message
+2025-10-16 11:31:11,490, CRITICAL  , Thiis is critical type message
+2025-10-16 11:31:11,490, ERROR     , Thiis is error type message
+2025-10-16 11:31:11,490, CRITICAL  , Thiis is critical type message
+2025-10-16 11:31:49,503, ERROR     , This is error type message
+2025-10-16 11:31:49,503, CRITICAL  , This is critical type message
+2025-10-16 11:31:49,503, ERROR     , This is error type message
+2025-10-16 11:31:49,504, CRITICAL  , This is critical type message
