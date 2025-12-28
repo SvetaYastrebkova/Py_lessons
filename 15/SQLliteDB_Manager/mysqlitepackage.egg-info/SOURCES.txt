@@ -1,0 +1,7 @@
+pyproject.toml
+mysqlitepackage.egg-info/PKG-INFO
+mysqlitepackage.egg-info/SOURCES.txt
+mysqlitepackage.egg-info/dependency_links.txt
+mysqlitepackage.egg-info/top_level.txt
+mysqllitepackage/__init__.py
+mysqllitepackage/my_utils.py

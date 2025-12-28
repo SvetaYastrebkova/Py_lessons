@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mysqlitepackage"
+version = "0.1.0"
+description = "A simple SQLite helper package with CRUD operations"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Sveta"}]
+
+[tool.setuptools.packages.find]
+where = ["."]

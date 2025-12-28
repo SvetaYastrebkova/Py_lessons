@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="my_db.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser query pragmas" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1687"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="employees2" custom_title="0" dock_id="7" table="4,10:mainemployees2"/><dock_state state="000000ff00000000fd000000010000000200000517000002e2fc0100000002fb000000160064006f0063006b00420072006f00770073006500310100000000000005170000000000000000fb000000160064006f0063006b00420072006f00770073006500370100000000000005170000013900ffffff000005170000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="departments" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="35"/><column index="2" value="247"/><column index="3" value="103"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="employees" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort><column index="0" mode="0"/></sort><column_widths><column index="1" value="39"/><column index="2" value="119"/><column index="3" value="119"/><column index="4" value="287"/><column index="5" value="95"/><column index="6" value="127"/><column index="7" value="247"/><column index="8" value="43"/><column index="9" value="215"/><column index="10" value="103"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="employees2" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort><column index="0" mode="0"/></sort><column_widths><column index="1" value="39"/><column index="2" value="95"/><column index="3" value="103"/><column index="4" value="119"/><column index="5" value="279"/><column index="6" value="95"/><column index="7" value="127"/><column index="8" value="47"/><column index="9" value="300"/><column index="10" value="103"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="test2" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="39"/><column index="2" value="119"/><column index="3" value="119"/><column index="4" value="287"/><column index="5" value="95"/><column index="6" value="127"/><column index="7" value="247"/><column index="8" value="43"/><column index="9" value="215"/><column index="10" value="103"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="test_table1" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="35"/><column index="2" value="40"/><column index="3" value="39"/><column index="4" value="113"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="test_users" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort><column index="0" mode="0"/></sort><column_widths><column index="1" value="35"/><column index="2" value="40"/><column index="3" value="39"/><column index="4" value="263"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="users" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="39"/><column index="2" value="95"/><column index="3" value="279"/><column index="4" value="113"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="Nested queries">-- get all employyees with salary &gt; average
+/*
+1 - get avg
+2 - select employees
+*/
+SELECT avg(salary) FROM employees;
+-- 7517
+SELECT * FROM employees
+	WHERE salary &gt; 7517;
+	
+-- Using nested query
+SELECT * FROM employees
+	WHERE salary &gt; 
+	(
+		SELECT avg(salary) FROM employees
+	);
+</sql><sql name="TABLES - CRUD">-- Create new TABLE
+CREATE TABLE &quot;test_table1&quot; ( -- Table name
+	-- table fields:
+	&quot;id&quot;	 INTEGER,
+	-- name  type 
+	&quot;name&quot;	TEXT,
+	&quot;email&quot;	TEXT,
+	&quot;employment_date&quot;	TEXT
+);
+
+CREATE TABLE IF NOT EXISTS &quot;test_table1&quot; (
+	&quot;id&quot;	INTEGER,
+	&quot;name&quot;	TEXT,
+	&quot;email&quot;	TEXT,
+	&quot;employment_date&quot;	TEXT
+);
+
+-- Drop TABLE
+DROP TABLE IF EXISTS &quot;test_table1&quot;;
+
+
+</sql><sql name="SQL 4">-- Copy table
+CREATE TABLE IF NOT EXISTS &quot;test2222&quot; (
+	&quot;id&quot;	INTEGER,
+	&quot;first_name&quot;	TEXT,
+	&quot;last_name&quot;	TEXT,
+	&quot;email&quot;	TEXT,
+	&quot;gender&quot;	TEXT,
+	&quot;ip_address&quot;	TEXT,
+	&quot;department&quot;	TEXT,
+	&quot;salary&quot;	TEXT,
+	&quot;city&quot;	TEXT,
+	&quot;phone&quot;	TEXT
+);
+
+INSERT INTO test2 SELECT * FROM employees;
+
+</sql><sql name="SQL Constraints">
+
+CREATE TABLE test_users (
+	&quot;id&quot;	INTEGER,
+	&quot;name&quot;	TEXT,
+	&quot;email&quot;	TEXT,
+	&quot;employment_date&quot;	TEXT
+);
+-- NOT NULL CONSTRAINT
+-- Primary key, autoincrement
+-- Unique
+-- default value
+
+CREATE TABLE &quot;test_users&quot; (
+	&quot;id&quot;	INTEGER NOT NULL,
+	&quot;name&quot;	TEXT,
+	&quot;email&quot;	TEXT NOT NULL UNIQUE,
+	&quot;employment_date&quot;	TEXT DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY(&quot;id&quot;)
+);
+-- check
+
+CREATE TABLE &quot;test_users&quot; (
+	&quot;id&quot;	INTEGER NOT NULL,
+	&quot;name&quot;	TEXT,
+	&quot;email&quot;	TEXT NOT NULL UNIQUE,
+	&quot;employment_date&quot;	TEXT DEFAULT CURRENT_TIMESTAMP,
+	&quot;children&quot;	INTEGER CHECK(&quot;children&quot; &gt;= 0),
+	PRIMARY KEY(&quot;id&quot;)
+);
+
+</sql><sql name="INSERT INTO">INSERT INTO test_users 
+	(&quot;id&quot;,&quot;name&quot;,&quot;email&quot;,&quot;employment_date&quot;) 
+VALUES 
+	(3,3,3,3);
+	
+-- test email NOT NULL CONSTRAINT
+
+INSERT INTO test_users 
+	(&quot;id&quot;,&quot;name&quot;,&quot;employment_date&quot;) 
+VALUES 
+	(3,'Haim',&quot;1111111111&quot;);
+	/*
+	Execution finished with errors.
+	Result: NOT NULL constraint failed: test_users.email
+	At line 6:
+	-- test email NOT NULL CONSTRAINT
+	*/
+	
+</sql><sql name="SQL 6">-- test primary key, unique
+INSERT INTO test_users 
+	(&quot;name&quot;,&quot;email&quot;,&quot;employment_date&quot;) 
+VALUES 
+	(3,3,3);
+	
+INSERT INTO test_users 
+	(&quot;name&quot;,&quot;employment_date&quot;) 
+VALUES 
+	(3,3); -- Execution finished with errors. Result: NOT NULL constraint failed: test_users.email</sql><sql name="SQL 7">INSERT INTO test_users 
+	(&quot;name&quot;,&quot;email&quot;,&quot;employment_date&quot;) 
+VALUES 
+	(3,3,3); -- Execution finished with errors. Result: UNIQUE constraint failed: test_users.email
+	
+</sql><sql name="SQL 8">INSERT INTO test_users 
+	(&quot;name&quot;,&quot;email&quot;, &quot;children&quot;) 
+VALUES 
+	(3,'mai7',-4); -- Execution finished with errors. Result: CHECK constraint failed: children &gt;=0
+	
+INSERT INTO test_users 
+	(&quot;name&quot;,&quot;email&quot;, &quot;children&quot;) 
+VALUES 
+	(3,'mai7',4);</sql><sql name="Foreign keys">INSERT INTO &quot;main&quot;.&quot;employees2&quot;(&quot;id&quot;,&quot;department_id&quot;,&quot;first_name&quot;,&quot;last_name&quot;,&quot;email&quot;,&quot;gender&quot;,&quot;ip_address&quot;,&quot;salary&quot;,&quot;city&quot;,&quot;phone&quot;) VALUES (NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
+
+INSERT INTO employees2
+	(&quot;department_id&quot;,&quot;first_name&quot;,&quot;last_name&quot;,&quot;email&quot;,&quot;gender&quot;,&quot;ip_address&quot;,&quot;salary&quot;,&quot;city&quot;,&quot;phone&quot;)
+ VALUES 
+ -- (&quot;department_id&quot;,&quot;first_name&quot;,&quot;last_name&quot;,&quot;email&quot;,   &quot;gender&quot;,  &quot;ip_address&quot;, &quot;salary&quot;, &quot;city&quot;, &quot;phone&quot;)
+	(11,               NULL,         NULL,      NULL,      NULL,        NULL,      NULL,    NULL    ,NULL); -- Execution finished with errors.Result: FOREIGN KEY constraint failed At line 4:
+</sql><sql name="SQL 10">/*
+	CREATE TABLE &quot;employees2&quot; (
+		&quot;id&quot;	INTEGER,
+		&quot;department_id&quot;	INTEGER,
+		&quot;first_name&quot;	TEXT,
+		&quot;last_name&quot;	TEXT,
+		&quot;email&quot;	TEXT,
+		&quot;gender&quot;	TEXT,
+		&quot;ip_address&quot;	TEXT,
+		&quot;salary&quot;	TEXT,
+		&quot;city&quot;	TEXT,
+		&quot;phone&quot;	TEXT,
+		PRIMARY KEY(&quot;id&quot;),
+		FOREIGN KEY(&quot;department_id&quot;) REFERENCES &quot;departments&quot;(&quot;id&quot;)
+	);
+*/
+</sql><sql name="Simple JOIN*">SELECT * FROM employees2
+	JOIN departments ON employees2.department_id = departments.id;
+
+SELECT employees2.first_name, employees2.last_name, departments.name, departments.address FROM employees2
+	JOIN departments ON employees2.department_id = departments.id;	
+
+-- SQL view  , temporary tables, WITH clause
+</sql><sql name="Table rosw CRUD operations*">-- CRUD : Create, Read, Update, Delete
+-- create new ROW:
+-- INSERT INTO
+-- Read :
+-- SELECT, JOIN
+-- UPDATE
+
+UPDATE departments SET &quot;address&quot;='Suite 666/22' 
+	WHERE id = '2';
+
+-- DELETE
+DELETE FROM departments
+	WHERE name = 'IT Support &amp; Service Desk'; -- Execution finished with errors. Result: FOREIGN KEY constraint failed
+</sql><sql name="SQL 13*">
+UPDATE employees2 SET &quot;email&quot;= employees2.first_name || '_' || employees2.id || '@mycorp.com' 
+	WHERE email IS NULL;
+</sql><sql name="SQL 14*">DELETE FROM employees2
+	WHERE first_name IS NULL AND first_name IS NULL ;</sql><current_tab id="11"/></tab_sql></sqlb_project>

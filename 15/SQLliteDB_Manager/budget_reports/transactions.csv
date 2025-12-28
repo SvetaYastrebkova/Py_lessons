@@ -1,0 +1,5 @@
+ID,Date,Amount,Sign,Balance,Category,Comment
+1,2025-09-19 14:51:16,45.0,+,45.0,salary,
+2,2025-09-19 14:51:44,30.0,-,15.0,food,nyam
+3,2025-09-19 14:55:06,30.0,-,-15.0,food,jkk
+4,2025-09-19 14:55:46,37.0,+,22.0,from friends,bit

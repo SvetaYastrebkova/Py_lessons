@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: mysqlitepackage
+Version: 0.1.0
+Summary: A simple SQLite helper package with CRUD operations
+Author: Sveta
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
