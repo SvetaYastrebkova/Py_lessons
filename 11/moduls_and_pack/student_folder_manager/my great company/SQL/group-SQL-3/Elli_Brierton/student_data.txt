@@ -1,0 +1,4 @@
+first_name: Elli
+last_name: Brierton
+course: SQL
+email: ebrierton2j@cornell.edu

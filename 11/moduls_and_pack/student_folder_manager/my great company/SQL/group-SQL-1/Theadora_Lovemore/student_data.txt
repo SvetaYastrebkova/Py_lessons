@@ -1,0 +1,4 @@
+first_name: Theadora
+last_name: Lovemore
+course: SQL
+email: tlovemore18@ftc.gov

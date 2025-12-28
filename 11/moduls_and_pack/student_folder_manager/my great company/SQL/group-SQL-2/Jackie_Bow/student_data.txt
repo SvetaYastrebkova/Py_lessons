@@ -1,0 +1,4 @@
+first_name: Jackie
+last_name: Bow
+course: SQL
+email: jbow1w@wikipedia.org

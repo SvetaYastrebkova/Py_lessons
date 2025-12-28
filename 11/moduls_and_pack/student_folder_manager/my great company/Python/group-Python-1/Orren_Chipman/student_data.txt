@@ -1,0 +1,4 @@
+first_name: Orren
+last_name: Chipman
+course: Python
+email: ochipmanl@economist.com

@@ -1,0 +1,4 @@
+first_name: Nikolaus
+last_name: Glashby
+course: SQL
+email: nglashby2o@spotify.com

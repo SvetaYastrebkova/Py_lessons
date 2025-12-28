@@ -1,0 +1,4 @@
+first_name: Bastien
+last_name: McSporrin
+course: SQL
+email: bmcsporrin1c@naver.com

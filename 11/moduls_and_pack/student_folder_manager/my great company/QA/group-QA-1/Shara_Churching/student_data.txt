@@ -1,0 +1,4 @@
+first_name: Shara
+last_name: Churching
+course: QA
+email: schurchingr@nytimes.com
