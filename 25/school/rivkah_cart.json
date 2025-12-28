@@ -1,0 +1,10 @@
+{
+    "🍎 Apple": {
+        "price": 3.5,
+        "quantity": 4
+    },
+    "🥛 Milk": {
+        "price": 5.0,
+        "quantity": 2
+    }
+}
