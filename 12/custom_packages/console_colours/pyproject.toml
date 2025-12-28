@@ -1,0 +1,8 @@
+[project]
+name = "console_colors"
+version = "0.1.0"
+description = "Простой пакет для вывода цветного текста в консоль (ANSI, без зависимостей)"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Sveta"}]
+
